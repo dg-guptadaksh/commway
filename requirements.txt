@@ -1,0 +1,13 @@
+# requirements.txt
+
+# Core Backend
+fastapi           # Lightweight and fast API framework
+uvicorn           # ASGI server to run FastAPI
+
+# Database (A good ORM is key)
+SQLAlchemy        # ORM for data persistence
+
+# Development/Testing
+pytest            # Testing framework
+black             # Code formatter (for open source consistency)
+flake8            # Linter
