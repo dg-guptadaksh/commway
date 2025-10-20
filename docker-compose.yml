@@ -1,0 +1,25 @@
+# docker-compose.yml
+
+version: '3.8'
+
+services:
+  commway:
+    # Build the service using the local Dockerfile
+    build: .
+    # Map port 8000 in the container to port 8000 on your machine
+    ports:
+      - "8000:8000"
+    # Mount the current directory (excluding venv) into the container
+    volumes:
+      - .:/app
+    # Define necessary environment variables for the mailer
+    environment:
+      # IMPORTANT: REPLACE THESE WITH YOUR ACTUAL CREDENTIALS FOR TESTING
+      - SMTP_SERVER=smtp.example.com
+      - SMTP_PORT=587
+      - SMTP_USERNAME=your_smtp_user
+      - SMTP_PASSWORD=your_smtp_password
+      - SQLALCHEMY_DATABASE_URL=sqlite:///./messages.db
+
+    # Ensures the application restarts if it crashes
+    restart: always
