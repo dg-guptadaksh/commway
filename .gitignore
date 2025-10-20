@@ -1,0 +1,36 @@
+# 1. Virtual Environment & Local Python Files
+# ------------------------------------------
+venv/
+.venv/
+*.pyc
+__pycache__/
+.Python
+env/
+
+# 2. Sensitive Data & Configuration (CRITICAL)
+# --------------------------------------------
+.env                      # Local environment variables file (contains passwords/API keys)
+.flaskenv                 # Flask/Python specific environment file
+.ini
+*.cfg
+
+# 3. Development / Database
+# -------------------------
+messages.db               # The SQLite database file (contains local data/logs)
+*.sqlite3
+instance/                 # Flask instance folder (often contains databases)
+
+# 4. OS & Editor Specific Files
+# -----------------------------
+.DS_Store                 # macOS specific file
+.vscode/                  # VS Code settings (unless intentionally shared)
+*~
+# Cursor specific files might include:
+.cursor/
+
+# 5. Build and Artifacts
+# ----------------------
+dist/                     # Python package distributions
+build/
+htmlcov/                  # HTML coverage reports from testing
+.pytest_cache/            # Pytest cache folder
